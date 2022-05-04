@@ -1,0 +1,40 @@
+version: "2"
+services:
+    web:
+        build: ./web-image
+        ports: 
+            - 8000:80
+        volumes:
+            - ./www:/var/www/html/
+            - ./log:/var/log/apache2/
+            - ./upload_attach:/var/www/upload_attach/
+            - ./php_ini/php.ini:/usr/local/etc/php/php.ini
+        links:
+            - db
+        networks:
+            - default
+        hostname: root.sbkntustws.social
+    db:
+        image: mysql:5.7
+        environment:
+            MYSQL_DATABASE: user_info
+            MYSQL_USER: sbk
+            MYSQL_PASSWORD: TheQueensGambit
+            MYSQL_ROOT_PASSWORD: StandWithUkraine
+        volumes:
+            - ./db:/docker-entrypoint-initdb.d
+        networks:
+            - default
+        hostname: root.sbkntustws.social
+        restart: unless-stopped
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links: 
+            - db:db
+        ports:
+            - 8002:80
+        hostname: root.sbkntustws.social
+        environment:
+            MYSQL_USER: sbk
+            MYSQL_PASSWORD: TheQueensGambit
+            MYSQL_ROOT_PASSWORD: StandWithUkraine            

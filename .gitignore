@@ -1,0 +1,9 @@
+# /db/*
+# /log/*
+# /php_ini/*
+# /upload_data/*
+# /web-image/*
+# *.yml
+# /www/session_data/*
+# /www/upload_attach/*
+# /www/upload_data/*
