@@ -1,4 +1,8 @@
 /* except sign in part */
+.cover-container-adjust
+{
+    max-width: 1000px;
+}
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus
@@ -45,11 +49,17 @@ body
 /* sign in part */
 :root{--border-radius:0.8rem;}
 html,body{height: 100%;}
-.padding-left-mid{padding-left: 206.5px!important}
+.padding-left-mid
+{
+    max-width: 226.7px;
+    position: relative;
+    left: 50%;
+    margin-left: -110px;
+}
 .signin-part
 {
     display: flex!important;
-    align-items: center!important;
+    /* align-items: center!important; */
 }
 .input-adjust
 {
@@ -69,27 +79,3 @@ html,body{height: 100%;}
 {
     margin-bottom: -1px;
 }
-/* .form-signin
-{
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    margin: auto;
-} */
-input[name="username"]
-{
-    margin-bottom: -1px;
-    /* border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0; */
-}
-  
-/* .form-floating:focus-within{z-index: 2;} */
-  
-
-  
-/* .form-signin input[type="password"]
-{
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-} */
