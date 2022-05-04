@@ -7,3 +7,4 @@
 # /www/session_data/*
 # /www/upload_attach/*
 # /www/upload_data/*
+docker-compose.yml
