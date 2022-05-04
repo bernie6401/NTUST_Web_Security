@@ -32,7 +32,7 @@
     {
         CleanSession();
         setcookie($session_name, '', time()-3600);//clear cookie
-        header("refresh:3; url=index.php");
+        header("refresh:3; url=index.html");
         // exit;
     }
 

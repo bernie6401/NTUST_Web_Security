@@ -1,3 +1,4 @@
+/* except sign in part */
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus
@@ -38,4 +39,57 @@ body
 {
     color: #fff;
     border-bottom-color: #fff;
-} 
+}
+
+
+/* sign in part */
+:root{--border-radius:0.8rem;}
+html,body{height: 100%;}
+.padding-left-mid{padding-left: 206.5px!important}
+.signin-part
+{
+    display: flex!important;
+    align-items: center!important;
+}
+.input-adjust
+{
+    width: auto;
+    border-radius: var(--border-radius);
+    display: inline;
+}
+.h1-adjust
+{
+    margin-top: 20px;
+}
+.btn-adjust
+{
+    border-radius: var(--border-radius);
+}
+.form-floating-adjust
+{
+    margin-bottom: -1px;
+}
+/* .form-signin
+{
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+} */
+input[name="username"]
+{
+    margin-bottom: -1px;
+    /* border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0; */
+}
+  
+/* .form-floating:focus-within{z-index: 2;} */
+  
+
+  
+/* .form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+} */

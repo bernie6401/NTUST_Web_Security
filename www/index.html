@@ -25,18 +25,26 @@
           </nav>
         </div>
       </header>
+      
+      <main class="">
+        <h1 class="h3 mb-3 h1-adjust">Please login or sign up first.</h1>
+        <div class="padding-left-mid signin-part">
+          <form method="POST" action="login.php" name="login">
+            <div class="text-black" style="text-shadow:0 0 0">
+              <div class="form-floating form-floating-adjust">
+                <input class="form-control input-adjust" id="floatingInput" placeholder="Username" type="text" name="username"><br><br>
+                <label for="floatingInput">Username</label>
+              </div>
 
-      <main class="px-3">
-        <h1>Please login or sign up first.</h1></br>
-
-        <form method="POST" action="login.php" name="login">
-          <label for="username">Username:</label>
-          <input id="username" placeholder="Username" required="" autofocus="" type="text" name="username"><br><br>
-          <label for="password">Password:</label>
-          <input id="password" placeholder="Password" required="" type="password" name="password"></br></br>
-          <button  type="submit" name="login_submit">Login</button>
-          <button  type="reset" value="Reset">Reset</button>
-        </form>
+              <div class="form-floating">
+                <input class="form-control input-adjust" id="floatingPassword" placeholder="Password" type="password" name="password"></br></br>
+                <label for="floatingPassword">Password</label>
+              </div>
+            </div>
+            <button  class="w-100 btn btn-lg btn-primary btn-adjust" type="submit" name="login_submit">Login</button></br></br>
+            <button  class="w-100 btn btn-lg btn-primary btn-adjust" type="reset" value="Reset">Reset</button>
+          </form>
+        </div>
       </main>
 
       <footer class="mt-auto text-white-50">

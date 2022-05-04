@@ -26,7 +26,7 @@
         catch (Exception $e)
         {
             echo 'Caught exception: ', $e->getMessage(), '<br>';
-            header("refresh:3; url=index.php");
+            header("refresh:3; url=index.html");
         }
 
         if(check($file_name) && is_file($file_name) && is_readable($file_name))
@@ -48,7 +48,7 @@
     else
         echo 'Upload Failed! Unknown reason!<br>';
 
-    header("refresh:3; url=index.php");
+    header("refresh:3; url=index.html");
 ?>
 
 <?php

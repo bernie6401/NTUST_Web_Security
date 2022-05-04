@@ -5,7 +5,7 @@
     include 'style.html';
 ?>
 <?php
-    $redirect_addr = "index.php";
+    $redirect_addr = "index.html";
     //verify file extension
     $filename = basename($_FILES['image_file']['name']);
     $extension = strtolower(end(explode(".", $filename)));
