@@ -1,0 +1,38 @@
+# The info below is as a instance that just show how to edit a docker-compose file
+version: "2"
+services:
+    web:
+        build: ./web-image
+        ports: 
+            # - 6666:80
+        volumes:
+            # - the file path that u want to volumes
+        links:
+            - db
+        networks:
+            - default
+        hostname: root.sbkntustws.social
+    db:
+        image: mysql:5.7
+        environment:
+            # MYSQL_DATABASE: <Your mysql init database name>
+            # MYSQL_USER: <Your mysql username>
+            # MYSQL_PASSWORD: <Your mysql password>
+            # MYSQL_ROOT_PASSWORD: <Your mysql root password>
+        volumes:
+            - ./db:/docker-entrypoint-initdb.d
+        networks:
+            - default
+        hostname: root.sbkntustws.social
+        restart: unless-stopped
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links: 
+            - db:db
+        ports:
+            - 8002:80
+        hostname: root.sbkntustws.social
+        environment:
+            # MYSQL_USER: <Your mysql username>
+            # MYSQL_PASSWORD: <Your mysql password>
+            # MYSQL_ROOT_PASSWORD: <Your mysql root password>
