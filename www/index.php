@@ -1,23 +1,17 @@
 <!doctype html>
 <html lang="en" class="h-100">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The homework of NTUSTWS lecture.">
-    <meta name="author" content="SBK">
-    <meta name="keywords" content="web security, html, css, js, ntust" />
-    <title>Home</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">   
+  <head>
+    <?php include("website_head.php"); ?>
     <!-- Custom styles for this template -->
     <link href="./css/index.css" rel="stylesheet">
   </head>
+
   <body class="d-flex h-100 text-center text-white bg-dark">
     <div class="cover-container-adjust d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="mb-auto">
         <div>
-          <h3 class="float-md-start mb-0" href="index.html">Home</h3>
+          <h3 class="float-md-start mb-0" href="index.php">Home</h3>
           <nav class="nav nav-masthead justify-content-center float-md-end">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
             <a class="nav-link" href="board.php">Board</a>

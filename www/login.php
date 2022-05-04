@@ -12,7 +12,7 @@
 <!-- detect login logic, sqli, set up cookies -->
 <?php
     if((!isset($_POST['username']) || !isset($_POST['password']) || $_POST['username']=="" || $_POST['password']=="") && isset($_POST['submit']))
-        header("Location: index.html");
+        header("Location: index.php");
 
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -24,7 +24,7 @@
     if ($sqli_user === true)
     {
         echo "You such a hacker !!!";
-        header("refresh:3; url=index.html");
+        header("refresh:3; url=index.php");
     }
     else
     { 
@@ -207,7 +207,7 @@
     else if($_POST['subject']!="" || $_POST['content']!="")
     {
         echo '<div class="flex-center">You can not let the field blank!</div>';
-        header("refresh:2; url=index.html");
+        header("refresh:2; url=index.php");
     }
 
     if(isset($_POST['change_title']))
@@ -217,7 +217,7 @@
         $sql = "UPDATE `page_title` SET `title_name` = '$title_name';";
         mysqli_query($db_link, $sql);
         
-        header("refresh:2; url=index.html");
+        header("refresh:2; url=index.php");
     }
 ?>
 <?ob_end_flush();?>

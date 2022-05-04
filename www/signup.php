@@ -56,7 +56,7 @@
                 {
                     echo 'Oops, you signed up before, please login at home page...<br><br>';
                     mysqli_close($db_link);
-                    header("refresh:3; url=index.html");
+                    header("refresh:3; url=index.php");
                 }
                 else
                 {
@@ -76,7 +76,7 @@
 
                     //head to home page
                     echo 'Sign up successful. Please wait 3s for redirection.<br><br>';
-                    header("refresh:3; url=index.html");
+                    header("refresh:3; url=index.php");
                 }
             }
             catch (Exception $e)

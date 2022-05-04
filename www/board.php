@@ -12,7 +12,7 @@
 </head>
 <body>
     <?php
-        echo '<div class="top-right home "><a href="index.html">Login</a></div>';
+        echo '<div class="top-right home "><a href="index.php">Login</a></div>';
         echo '
         <div class="note full-height">';
             include "config.php";
