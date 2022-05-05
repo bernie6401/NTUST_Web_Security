@@ -6,7 +6,7 @@
 ?>
 <html>
     <head>
-        <meta charset="UTF-8" />
+        <?php include("website_head.php")?>
         <title>New Member Sign up</title>
     </head>
 

@@ -3,8 +3,7 @@
     session_save_path('/var/www/html/session_data/');
     session_start();
     include 'style.html';
-?>
-<?php
+    
     $redirect_addr = "index.php";
     //verify file extension
     $filename = basename($_FILES['image_file']['name']);
@@ -87,20 +86,5 @@
         header("refresh:3; url=$redirect_addr");
     }
     else echo 'Error code：' . $_FILES['my_file']['error'] . '<br/>';
-?>
-
-<?php
-    // function convert($filePath)
-    // {
-    //     $image = imagecreatefrompng($filePath);
-    //     $bg = imagecreatetruecolor(imagesx($image), imagesy($image));
-    //     imagefill($bg, 0, 0, imagecolorallocate($bg, 255, 255, 255));
-    //     imagealphablending($bg, TRUE);
-    //     imagecopy($bg, $image, 0, 0, 0, 0, imagesx($image), imagesy($image));
-    //     imagedestroy($image);
-    //     $quality = 50; // 0 = worst / smaller file, 100 = better / bigger file 
-    //     imagejpeg($bg, $filePath.".jpg", $quality);
-    //     imagedestroy($bg);
-    // }
 ?>
 <?ob_end_flush();?>

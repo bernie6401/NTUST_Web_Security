@@ -3,8 +3,7 @@
     session_save_path('/var/www/html/session_data/');
     session_start();
     include 'style.html';
-?>
-<?php
+
     $img_file_addr = $_POST[image_file_web];
     $file_addr_len = strlen($_POST[image_file_web]);
     $verify1 = explode("//", $img_file_addr);
@@ -49,9 +48,8 @@
         echo 'Upload Failed! Unknown reason!<br>';
 
     header("refresh:3; url=index.php");
-?>
 
-<?php
+
     function check($filename)
     {
         //verify file extension

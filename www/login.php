@@ -65,10 +65,7 @@
 <!-- design the web including user profile and blog -->
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="The homework of NTUSTWS lecture." />
-        <meta name="author" content="SBK" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <?php include("website_head.php")?>
         <?php 
             $db_link = ConnectDB();
             $sql_title_name = "SELECT * FROM `page_title`;";

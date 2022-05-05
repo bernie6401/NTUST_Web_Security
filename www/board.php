@@ -4,10 +4,7 @@
 ?>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="The homework of NTUSTWS lecture." />
-    <meta name="author" content="SBK" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <?php include("website_head.php")?>
     <title>All messages</title>
 </head>
 <body>
