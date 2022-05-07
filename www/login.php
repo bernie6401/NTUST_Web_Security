@@ -3,9 +3,7 @@
     session_save_path('/var/www/html/session_data');
 
     require("config.php");
-    // Forceboard();
-
-    include 'style.html';
+    // include 'style.html';
 ?>
 <!DOCTYPE html>
 
@@ -65,8 +63,8 @@
 <!-- design the web including user profile and blog -->
 <html>
     <head>
-        <?php include("website_head.php")?>
-        <?php 
+        <?php
+            include("website_head.php");
             $db_link = ConnectDB();
             $sql_title_name = "SELECT * FROM `page_title`;";
             $result_title_name = mysqli_query($db_link, $sql_title_name);
@@ -74,75 +72,61 @@
             $title = $row_result_title_name['title_name'];
             echo "<title>".$title."</title>";
         ?>
+        <link href="./css/login.css" rel="stylesheet">
     </head>
-    <body>
+    <body class="container container-adjust text-white bg-dark">
         <?php
-            if (password_verify($password, $row_result['password']))// || $_COOKIE["user_name"] == $username
+            if (password_verify($password, $row_result['password']))
             {
-                //design User Profile
+                $result = mysqli_query($db_link, $sql); //u must add this line to execute the function
+                $row_result = mysqli_fetch_assoc($result);
+
+                //design header
                 echo '
-                <h1 align = "center">User Profile</h1>
-                <table border="1" align = "center">
-                    <tr>
-                        <th>ID</th>
-                        <th>Username</th>
-                        <th>Upload(IMG or Web)</th>
-                        <th>Avatar</th>';
-                        if(password_verify($password, $row_result['password']) && $row_result['username'] == 'sbkadm')
-                        echo '<th>Change title</th>';
-                    echo '
-                    </tr>';
-            
-                    $result = mysqli_query($db_link, $sql); //u must add this line to execute the function
-                    $row_result = mysqli_fetch_assoc($result);
-                    echo "<tr>";
-                    echo "<td>".$row_result['id']."</td>";
-                    echo "<td>".$row_result['username']."</td>";
-                    echo "
-                        <td>
-                            <p>Must less than 2M</p></br>
-                            <form action='check_upload_data.php' method='POST' enctype='multipart/form-data'>
-                                <input type='hidden' name='name' value=".$username.">
-                                <input type='file' name='image_file' value='Browse'>
-                                <input type='submit' name='image_file' value='Upload'>
-                            </form>
-                            <form action='check_upload_data_web.php' method='POST' enctype='multipart/form-data'>
-                                </br></br>
-                                <a>From Web：</a><input type='text' name='image_file_web'>
-                                <input type='hidden' name='name' value=".$username.">
-                            </form>
-                        </td>";
-                    echo "<td><img src=".$row_result[avatar_id]." width='100'></td>";
-                    if(password_verify($password, $row_result['password']) && $row_result['username'] == 'sbkadm')
-                    echo "
-                        <form method='POST'>
-                            <td><input type='text' name='change_title'></td>
-                        </form>";
-                    echo "</tr>";
-                echo "</table>";
+                <header>
+                    <div class="mb-bottom-adjust">
+                        <h3 class="float-md-start mb-0" href="index.php">Edit</h3>
+                        <nav class="nav nav-masthead justify-content-center float-md-end">
+                            <a class="nav-link" href="logout.php">Logout</a>
+                            <a class="nav-link" href="signup.php">Register</a>
+                            <a class="nav-link" href="board.php">Board</a>
+                        </nav>
+                    </div>
+                </header>';
 
-
-                //design comment blog
+                //design User Profile        
+                echo "
+                    <img src=".$row_result[avatar_id]." width='100' class='img-circle mb-top-adjust' alt='You should not upload ilegal img' title='Your avatar icon'>
+                    <div class='mb-3'>
+                        <form action='check_upload_data.php' method='POST' enctype='multipart/form-data'>
+                            <a>From Local File</a>
+                            <input type='hidden' name='name' value=".$username.">
+                            <input class='form-control' type='file' name='image_file' value='Browse'>
+                            <input class='btn btn-primary' type='submit' name='image_file' value='Upload'>
+                        </form>
+                    </div>
+                    <div class='mb-3'>
+                        <form action='check_upload_data_web.php' method='POST' enctype='multipart/form-data'>
+                            <a>From Web</a>
+                            <input class='form-control' type='text' name='image_file_web'>
+                            <input type='hidden' name='name' value=".$username.">
+                        </form>
+                    </div>";
+                    
+                if(password_verify($password, $row_result['password']) && $row_result['username'] == 'sbkadm')
+                {
+                    echo '<div class="mb-3">Change title</div>';
+                    echo "
+                    <form method='POST'>
+                        <input class='form-control' type='text' name='change_title'>
+                    </form>";
+                }
+                
+                //add post icon
                 echo '
-                <br/><br/><hr/><br/><br/>
-
-                <div class="top-right home">
-                    <a href="logout.php">Logout</a>
-                    <a href="signup.php">Register</a>
-                    <a href="board.php?username='.$row_result['username'].'">Board</a>
-                </div>
-            
-                <div class="m-b-md content" style="padding-left: 30px; padding-top: 15px; margin-left: 170px; padding-right: 20px;">
-                    <form name="form1" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="name" value='.$username.'>
-                        <p><strong>Hi, there. Write your post below.</strong></p>
-                        <p>Title(Max:200)</p><input type="text" name="subject" class="blog_title">
-                        <p>Content(Max:2000)</p><textarea class=textarea type="" name="content"></textarea></br>
-                        <input type="file" name="attach_file_submit" value="Attach File">
-                        <input type="submit" name="send_submit" value="SEND">
-                        <input type="reset" name="Reset" value="RESET">
-                    </form>
-                </div>';
+                <footer>
+                    <a class="add-post-btn" href="post.php?username='.$row_result['username'].'">+</a>
+                </footer>';
             }
         ?>
     </body>
@@ -150,63 +134,6 @@
 
 <!-- design submit login about comment blog -->
 <?php
-    if (isset($_POST['send_submit']) && $_POST['subject']!="" && $_POST['content']!="")
-    {
-        //upload attach file
-        if(isset($_FILES['attach_file_submit']) && is_readable($_FILES['attach_file_submit']['tmp_name']))
-        {
-            $prefix = bin2hex(random_bytes(4));
-            $attach_file_addr = $_FILES['attach_file_submit']["name"];
-            $attach_file_addr = str_replace("_", " ", $attach_file_addr);
-            $attach_file_addr = "../upload_attach/".$prefix."_".$attach_file_addr;
-            if(move_uploaded_file($_FILES['attach_file_submit']['tmp_name'], $attach_file_addr))
-                echo '<div class="success">Upload Attachment Success!</br></div>';
-        }
-        // else if(isset($_FILES['attach_file_submit']) && !is_readable($_FILES['attach_file_submit']['tmp_name']))
-        //     echo '<div class="success">Upload Attachment Unsuccess!</br>You can not upload the file size > 2M!</div>';
-        else
-            $attach_file_addr = '';
-        
-
-        $subject = $_POST['subject'];
-        $content = $_POST['content'];
-        $username = $_POST['name'];
-
-        //sqli detection
-        $subject = sqli_detect_blog($subject);
-        $content = sqli_detect_blog($content);
-
-        //create post id
-        require_once('check_post_id.php');
-        $post_id = check_post_id($db_link);
-
-        $sql = "INSERT into `users_blog`(`post_id`, `user_name`, `blog_title`, `blog_content`, `post_time`, `attach_file_addr`) VALUES ('$post_id', '$username', '$subject', '$content', now(), '$attach_file_addr');";
-
-        if (!mysqli_query($db_link, $sql))
-        {
-            die(mysqli_error());
-        }
-        else
-        {
-            //若成功將留言存進資料庫，會自動跳轉到顯示留言的頁面
-            // echo"
-            //     <script>
-            //     setTimeout(function(){window.location.href='board.php?username=".$username."';},500);
-            //     </script>";
-            echo '<div class="success">Added successfully !</br>Wait for redirection !</div>';
-            header("refresh:2; url=board.php?username=$username");
-        }
-    }
-    else if(password_verify($password, $row_result['password']))
-    {
-        echo '<div class="success">Click <strong>Send</strong> when you\'re done.</div>';
-    }
-    else if($_POST['subject']!="" || $_POST['content']!="")
-    {
-        echo '<div class="flex-center">You can not let the field blank!</div>';
-        header("refresh:2; url=index.php");
-    }
-
     if(isset($_POST['change_title']))
     {
         $db_link = ConnectDB();

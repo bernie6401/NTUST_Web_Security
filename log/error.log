@@ -7,3 +7,17 @@
 [Thu May 05 04:12:27.800617 2022] [:error] [pid 20] [client 141.101.196.233:47764] script '/var/www/html/ip.php' not found or unable to stat, referer: https://google.com/
 [Thu May 05 15:50:22.072493 2022] [:error] [pid 17] [client 167.99.69.250:58328] script '/var/www/html/system_api.php' not found or unable to stat
 [Thu May 05 15:50:22.123122 2022] [:error] [pid 19] [client 172.23.0.1:55654] script '/var/www/html/system_api.php' not found or unable to stat
+[Thu May 05 22:04:38.701753 2022] [authz_core:error] [pid 21] [client 88.80.186.144:33144] AH01630: client denied by server configuration: /var/www/html/server-status
+[Thu May 05 22:04:39.093581 2022] [core:error] [pid 19] [client 88.80.186.144:33624] AH00082: an unknown filter was not added: includes
+[Thu May 05 22:04:39.795455 2022] [core:error] [pid 18] [client 172.23.0.1:55816] AH00082: an unknown filter was not added: includes
+[Thu May 05 22:04:40.725898 2022] [:error] [pid 17] [client 88.80.186.144:36170] script '/var/www/html/inicio.php' not found or unable to stat
+[Thu May 05 22:04:41.937099 2022] [:error] [pid 21] [client 88.80.186.144:37978] script '/var/www/html/admin.php' not found or unable to stat
+[Thu May 05 22:04:42.725573 2022] [:error] [pid 19] [client 172.23.0.1:55884] script '/var/www/html/inicio.php' not found or unable to stat
+[Thu May 05 22:04:43.156028 2022] [core:error] [pid 22] [client 88.80.186.144:39766] AH00082: an unknown filter was not added: includes
+[Thu May 05 22:04:43.557094 2022] [:error] [pid 17] [client 88.80.186.144:40402] script '/var/www/html/menu.php' not found or unable to stat
+[Thu May 05 22:04:44.937532 2022] [:error] [pid 18] [client 172.23.0.1:55916] script '/var/www/html/admin.php' not found or unable to stat
+[Thu May 05 22:04:45.180079 2022] [:error] [pid 17] [client 88.80.186.144:42854] script '/var/www/html/main.php' not found or unable to stat
+[Thu May 05 22:04:47.064145 2022] [core:error] [pid 24] [client 172.23.0.1:55928] AH00082: an unknown filter was not added: includes
+[Thu May 05 22:04:47.808183 2022] [:error] [pid 17] [client 172.23.0.1:55932] script '/var/www/html/menu.php' not found or unable to stat
+[Fri May 06 22:00:46.264873 2022] [:error] [pid 17] [client 172.23.0.1:56158] script '/var/www/html/adminer.php' not found or unable to stat
+[Fri May 06 22:04:14.588727 2022] [:error] [pid 24] [client 141.101.196.233:14534] script '/var/www/html/ip.php' not found or unable to stat, referer: https://google.com/

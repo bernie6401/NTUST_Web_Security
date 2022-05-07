@@ -2,6 +2,7 @@
 <html lang="en" class="h-100">
 
   <head>
+    <title>Home</title>
     <?php include("website_head.php"); ?>
     <!-- Custom styles for this template -->
     <link href="./css/index.css" rel="stylesheet">
@@ -20,7 +21,7 @@
         </div>
       </header>
       
-      <main class="">
+      <main>
         <h1 class="h3 mb-3 h1-adjust">Please login or sign up first.</h1>
         <div class="padding-left-mid signin-part">
           <form method="POST" action="login.php" name="login">
