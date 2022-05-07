@@ -127,6 +127,7 @@
                 <footer>
                     <a class="add-post-btn" href="post.php?username='.$row_result['username'].'">+</a>
                 </footer>';
+                
             }
         ?>
     </body>
