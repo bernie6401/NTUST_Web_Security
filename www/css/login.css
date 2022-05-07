@@ -1,0 +1,49 @@
+.container-adjust{max-width: 1000px!important}
+
+/* all set up about header */
+.mb-bottom-adjust{margin-bottom: 20px!important}
+.mb-top-adjust{margin-top: 50px!important}
+.nav-masthead .nav-link
+{
+    padding: .25rem 0;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .5);
+    background-color: transparent;
+    border-bottom: .25rem solid transparent;
+}
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus
+{
+    border-bottom-color: rgb(255, 255, 255, 1)!important
+}
+.nav-masthead .nav-link + .nav-link
+{
+    margin-left: 1rem;
+}
+.nav-masthead .active
+{
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+/* about img */
+.img-circle{border-radius:50%}
+
+/* about add btn */
+.add-post-btn
+{
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 60px;
+    position: fixed;
+    left: auto;
+    bottom: 50px;
+    background-color: #ffffff;
+    text-decoration: none;
+    opacity: 1;
+    z-index: 999;
+    display:inline-block
+}
