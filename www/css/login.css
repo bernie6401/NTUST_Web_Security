@@ -3,26 +3,7 @@
 
 /* all set up about header */
 .mb-top-adjust{margin-top: 50px!important}
-.navbar-light-adjust
-{
-    color:rgba(226, 30, 30, 0.699)!important;
-    border-color:rgba(0, 0, 0, 0);
-}
-.text-adjust
-{
-    color:rgba(255, 255, 255, 0.973)!important
-}
-/* .navbar-light-adjust:focus,
-.navbar-light-adjust:hover{color:rgba(0, 0, 0, 0)}
-.navbar-light-adjust:focus,
-.navbar-light-adjust:hover{color:rgba(0, 0, 0, 0)}
-.navbar-light-adjust.disabled{color:rgba(0, 0, 0, 0)}
-.navbar-light-adjust.active,
-.navbar-light-adjust >.nav-link{color:rgba(0, 0, 0, 0)}
-.navbar-light-adjust a,
-.navbar-light-adjust a:focus,
-.navbar-light-adjust a:hover{color:rgba(255, 255, 255, 0.226)} */
-
+.border-adjust{border-radius:0.25rem!important}
 
 /* about img */
 .img-circle{border-radius:50%}
