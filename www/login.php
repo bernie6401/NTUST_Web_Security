@@ -81,11 +81,11 @@
                 $result = mysqli_query($db_link, $sql); //u must add this line to execute the function
                 $row_result = mysqli_fetch_assoc($result);
 
-                //design header//-adjust
+                //design header
                 echo '
-                <nav class="navbar-light-adjust navbar navbar-dark " style="background-color: rgba(111, 183, 255, 0.473)!important">
+                <nav class="navbar-expand-lg navbar navbar-dark bg-primary mt-2 border-adjust" style="background-color: rgba(111, 183, 255, 0.473)!important">
                     <div class="container-fluid">
-                        <h3 class="navbar-brand text-white" href="index.php">Edit</h3>
+                        <h3 class="navbar-brand text-white" href="index.php">Edit Avatar</h3>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -143,6 +143,8 @@
 
             }
         ?>
+
+        <script src="./js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
 
