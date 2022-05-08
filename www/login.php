@@ -83,13 +83,13 @@
 
                 //design header
                 echo '
-                <nav class="navbar-expand-lg navbar navbar-dark bg-primary mt-2 border-adjust" style="background-color: rgba(111, 183, 255, 0.473)!important">
+                <nav class="navbar navbar-dark bg-primary mt-2 border-adjust" style="background-color: rgba(111, 183, 255, 0.473)!important">
                     <div class="container-fluid">
-                        <h3 class="navbar-brand text-white" href="index.php">Edit Avatar</h3>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <a class="navbar-brand text-white" href="index.php">Edit Avatar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse" id="navbarsExample01">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link active" href="signup.php">Register</a>
@@ -107,7 +107,7 @@
 
                 //design User Profile        
                 echo "
-                    <img src=".$row_result[avatar_id]." width='100' class='img-circle mb-top-adjust' alt='You should not upload ilegal img' title='Your avatar icon'>
+                    <img src=".$row_result[avatar_id]." width='100' height='100' class='img-circle mb-top-adjust' alt='You should not upload ilegal img' title='Your avatar icon'>
                     <div class='mb-3'>
                         <form action='check_upload_data.php' method='POST' enctype='multipart/form-data'>
                             <a>From Local File</a>

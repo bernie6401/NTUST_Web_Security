@@ -37,7 +37,7 @@
 
                     echo "
                     <div class='post_content'>
-                        <br><img src=".$avatar_id_row ["avatar_id"]." width='10'  class='img-circle' alt='You should not upload ilegal img' title='Your avatar icon'>
+                        <br><img src=".$avatar_id_row ["avatar_id"]." width='100' height='100' class='img-circle' alt='You should not upload ilegal img' title='Your avatar icon'>
                         <br>Poster Name：" . $row['user_name']."
                         <br>Title：" . $row['blog_title']."
                         <br>Content：" . nl2br($blog_content) . "<br>
