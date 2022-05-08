@@ -1,7 +1,7 @@
 <html>
     <head>
         <?php include("website_head.php") ?>
-        <title>Board</title>
+        <title>Post</title>
         <link href="./css/post.css" rel="stylesheet">
     </head>
     <body>
