@@ -115,11 +115,13 @@
                     
                 if(password_verify($password, $row_result['password']) && $row_result['username'] == 'sbkadm')
                 {
-                    echo '<div class="mb-3">Change title</div>';
+                    echo '
+                    <div class="mb-3">Change title';
                     echo "
-                    <form method='POST'>
-                        <input class='form-control' type='text' name='change_title'>
-                    </form>";
+                        <form method='POST'>
+                            <input class='form-control' type='text' name='change_title'>
+                        </form>
+                    </div>";
                 }
                 
                 //add post icon
@@ -127,7 +129,7 @@
                 <footer>
                     <a class="add-post-btn" href="post.php?username='.$row_result['username'].'">+</a>
                 </footer>';
-                
+
             }
         ?>
     </body>
