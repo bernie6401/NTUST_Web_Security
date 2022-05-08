@@ -1,10 +1,10 @@
 # /db/*
-# /log/*
+./log/*
 # /php_ini/*
 # /upload_data/*
 # /web-image/*
 # *.yml
-# /www/session_data/*
-# /www/upload_attach/*
-# /www/upload_data/*
+./www/session_data/*
+./upload_attach/*
+./www/upload_data/*
 docker-compose.yml
