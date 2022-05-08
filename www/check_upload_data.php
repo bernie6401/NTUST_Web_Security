@@ -65,11 +65,11 @@
     }
     else if ($_FILES['image_file']['error'] === UPLOAD_ERR_OK)
     {
-        echo 'File Name: ' . $_FILES['image_file']['name'] . '<br/>';
-        echo 'File Type: ' . $_FILES['image_file']['type'] . '<br/>';
-        echo 'File Size: ' . ($_FILES['image_file']['size'] / 1024) . ' KB<br/>';
-        echo 'Tmp Name: ' . $_FILES['image_file']['tmp_name'] . '<br/>';
-        echo mime_content_type($_FILES["image_file"]["tmp_name"]);
+        // echo 'File Name: ' . $_FILES['image_file']['name'] . '<br/>';
+        // echo 'File Type: ' . $_FILES['image_file']['type'] . '<br/>';
+        // echo 'File Size: ' . ($_FILES['image_file']['size'] / 1024) . ' KB<br/>';
+        // echo 'Tmp Name: ' . $_FILES['image_file']['tmp_name'] . '<br/>';
+        // echo mime_content_type($_FILES["image_file"]["tmp_name"]);
 
         
         if(move_uploaded_file($_FILES['image_file']['tmp_name'], $filename))
@@ -83,6 +83,8 @@
             $sql = "UPDATE `users_info` SET `avatar_id` = '$filename' WHERE `users_info`.`username` = '$username';";
             mysqli_query($db_link, $sql);
         }
+        else
+            echo '<br>Upload Failed!';
         header("refresh:3; url=$redirect_addr");
     }
     else echo 'Error code：' . $_FILES['my_file']['error'] . '<br/>';
