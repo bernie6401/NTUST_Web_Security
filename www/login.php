@@ -81,18 +81,29 @@
                 $result = mysqli_query($db_link, $sql); //u must add this line to execute the function
                 $row_result = mysqli_fetch_assoc($result);
 
-                //design header
+                //design header//-adjust
                 echo '
-                <header>
-                    <div class="mb-bottom-adjust">
-                        <h3 class="float-md-start mb-0" href="index.php">Edit</h3>
-                        <nav class="nav nav-masthead justify-content-center float-md-end">
-                            <a class="nav-link" href="logout.php">Logout</a>
-                            <a class="nav-link" href="signup.php">Register</a>
-                            <a class="nav-link" href="board.php">Board</a>
-                        </nav>
+                <nav class="navbar-light-adjust navbar navbar-dark " style="background-color: rgba(111, 183, 255, 0.473)!important">
+                    <div class="container-fluid">
+                        <h3 class="navbar-brand text-white" href="index.php">Edit</h3>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="signup.php">Register</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="logout.php">Logout</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="board.php">Board</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </header>';
+                </nav>';
 
                 //design User Profile        
                 echo "

@@ -7,8 +7,8 @@
     <link href="./css/board.css" rel="stylesheet">
     <title>All messages</title>
 </head>
-<body>
-    <div class="container container-adjust">
+<body class="container container-adjust text-white bg-dark">
+    <div>
         <?php
             echo '<div class="top-right home "><a href="index.php">Login</a></div>';
             echo '
@@ -35,10 +35,13 @@
                     require_once("check_bbcode.php");
                     $blog_content = check_bbcode($username, $post_time);
 
-                    echo "<br><img src=".$avatar_id_row ["avatar_id"]." width='100'  class='img-circle' alt='You should not upload ilegal img' title='Your avatar icon'>";
-                    echo "<br>Poster Name：" . $row['user_name'];
-                    echo "<br>Title：" . $row['blog_title'];
-                    echo "<br>Content：" . nl2br($blog_content) . "<br>";//$row['blog_content']
+                    echo "
+                    <div class='post_content'>
+                        <br><img src=".$avatar_id_row ["avatar_id"]." width='10'  class='img-circle' alt='You should not upload ilegal img' title='Your avatar icon'>
+                        <br>Poster Name：" . $row['user_name']."
+                        <br>Title：" . $row['blog_title']."
+                        <br>Content：" . nl2br($blog_content) . "<br>
+                    </div>";
                     
                     if(is_file($row['attach_file_addr']) && is_readable($row['attach_file_addr']))
                     {
@@ -82,3 +85,25 @@
     </div>
 </body>
 </html>
+
+<?php
+    function month_list($mon)
+    {
+        $mon_array = array(
+            "01" => "Jan",
+            "02" => "Fab",
+            "03" => "Mar",
+            "04" => "Apr",
+            "05" => "May",
+            "06" => "Jun",
+            "07" => "Jul",
+            "08" => "Aug",
+            "09" => "Sep",
+            "10" => "Oct",
+            "11" => "Nov",
+            "12" => "Dec"
+        );
+
+        return $mon_array[$mon];
+    }
+?>
