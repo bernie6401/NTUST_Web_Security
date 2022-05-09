@@ -21,3 +21,12 @@
 [Thu May 05 22:04:47.808183 2022] [:error] [pid 17] [client 172.23.0.1:55932] script '/var/www/html/menu.php' not found or unable to stat
 [Fri May 06 22:00:46.264873 2022] [:error] [pid 17] [client 172.23.0.1:56158] script '/var/www/html/adminer.php' not found or unable to stat
 [Fri May 06 22:04:14.588727 2022] [:error] [pid 24] [client 141.101.196.233:14534] script '/var/www/html/ip.php' not found or unable to stat, referer: https://google.com/
+[Sun May 08 15:57:38.275908 2022] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+[Sun May 08 15:58:35.832249 2022] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.0.30 configured -- resuming normal operations
+[Sun May 08 15:58:35.833196 2022] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Sun May 08 16:07:22.076230 2022] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+[Sun May 08 16:07:32.521875 2022] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.0.30 configured -- resuming normal operations
+[Sun May 08 16:07:32.524216 2022] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon May 09 02:45:43.804335 2022] [authz_core:error] [pid 21] [client 172.104.159.48:55358] AH01630: client denied by server configuration: /var/www/html/server-status
+[Mon May 09 02:45:51.316089 2022] [core:error] [pid 20] [client 172.104.159.48:58884] AH00082: an unknown filter was not added: includes
+[Mon May 09 02:45:51.886424 2022] [core:error] [pid 17] [client 172.23.0.1:47762] AH00082: an unknown filter was not added: includes
