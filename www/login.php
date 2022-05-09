@@ -1,5 +1,4 @@
 <?php 
-    ob_start();
     session_save_path('/var/www/html/session_data');
 
     require("config.php");
@@ -160,4 +159,3 @@
         header("refresh:2; url=index.php");
     }
 ?>
-<?ob_end_flush();?>
