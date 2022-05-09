@@ -27,5 +27,5 @@ CREATE TABLE `page_title`
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- INSERT INTO `users_info` (`id`, `username`, `password`, `avatar_id`) VALUES ("1", "sbkadmin", "StandWithUkraine", "./upload_data/default_avatar.jpg");
-INSERT INTO `users_blog` (`post_id`, `user_name`, `blog_title`, `blog_content`, `post_time`, `attach_file_addr`) VALUES ("1", "sbkadmin", "test", "test", now(), "");
+-- INSERT INTO `users_blog` (`post_id`, `user_name`, `blog_title`, `blog_content`, `post_time`, `attach_file_addr`) VALUES ("1", "sbkadmin", "test", "test", now(), "");
 INSERT INTO `page_title` (`title_name`) VALUES ("Login Page");
