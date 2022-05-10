@@ -78,13 +78,13 @@
             <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active" aria-current="page">
-                        <svg class="bi me-2" width="16" height="16"><use xlink:href="index.php"/></svg>
+                        <a href="index.php" class="nav-link active" aria-current="page">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
                         Home
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link text-white">
+                        <a href="board.php" class="nav-link text-white">
                         <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
                         Board
                         </a>
