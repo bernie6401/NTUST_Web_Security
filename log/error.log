@@ -30,3 +30,6 @@
 [Mon May 09 02:45:43.804335 2022] [authz_core:error] [pid 21] [client 172.104.159.48:55358] AH01630: client denied by server configuration: /var/www/html/server-status
 [Mon May 09 02:45:51.316089 2022] [core:error] [pid 20] [client 172.104.159.48:58884] AH00082: an unknown filter was not added: includes
 [Mon May 09 02:45:51.886424 2022] [core:error] [pid 17] [client 172.23.0.1:47762] AH00082: an unknown filter was not added: includes
+[Tue May 10 03:53:39.683626 2022] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+[Tue May 10 03:53:50.492753 2022] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.0.30 configured -- resuming normal operations
+[Tue May 10 03:53:50.494907 2022] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
