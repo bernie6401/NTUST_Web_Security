@@ -1,0 +1,35 @@
+.container-adjust{max-width: 1000px!important}
+
+/* form part */
+:root{--border-radius: 0.5rem;}
+.input-adjust
+{
+    border-radius: var(--border-radius);
+    display: inline;
+    margin-bottom: 6px;
+    width: auto!important;
+}
+
+.padding-left-mid
+{
+    max-width: 226.7px;
+    position: relative;
+    left: 50%;
+    margin-left: -110px;
+}
+
+.required-star-adjust
+{
+    visibility: visible;
+    color: red!important;
+    font-weight: 700;
+}
+
+.margin-top-adjust{margin-top: 0px!important}
+.margin-top-div-adjust
+{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.float-right-adjust{float: right!important}
