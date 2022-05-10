@@ -137,7 +137,7 @@
                 //add post icon
                 echo '
                 <footer>
-                    <a class="aaa" href="post.php?username='.$row_result['username'].'">+</a>
+                    <a class="bbb" style="width: 70px; height: 70px; border-radius: 35px; font-size: 50px; text-align: center; line-height: 60px; position: fixed; left: auto; bottom: 50px; background-color: #ffffff; text-decoration: none; opacity: 1; z-index: 999; display:inline-block; color: #ED7915" href="post.php?username='.$row_result['username'].'">+</a>
                 </footer>';
             }
         ?>
