@@ -82,7 +82,7 @@
 
                 //design header
                 echo '
-                <nav class="navbar navbar-dark bg-primary mt-2 border-adjust" style="background-color: rgba(111, 183, 255, 0.473)!important">
+                <nav class="navbar navbar-dark bg-primary mt-2 border-adjust" style="background-color: rgba(108, 255, 103, 0.62)!important">
                     <div class="container-fluid">
                         <a class="navbar-brand text-white" href="index.php">Edit Avatar</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -137,9 +137,8 @@
                 //add post icon
                 echo '
                 <footer>
-                    <a class="add-post-btn" href="post.php?username='.$row_result['username'].'">+</a>
+                    <a class="aaa" href="post.php?username='.$row_result['username'].'">+</a>
                 </footer>';
-
             }
         ?>
 
