@@ -27,12 +27,12 @@
           <form method="POST" action="login.php" name="login">
             <div class="text-black" style="text-shadow:0 0 0">
               <div class="form-floating form-floating-adjust">
-                <input class="form-control input-adjust" id="floatingInput" placeholder="Username" type="text" name="username"><br><br>
+                <input class="form-control input-adjust" id="floatingInput" placeholder="Username" type="text" name="username" required><br><br>
                 <label for="floatingInput">Username</label>
               </div>
 
               <div class="form-floating">
-                <input class="form-control input-adjust" id="floatingPassword" placeholder="Password" type="password" name="password"></br></br>
+                <input class="form-control input-adjust" id="floatingPassword" placeholder="Password" type="password" name="password" required></br></br>
                 <label for="floatingPassword">Password</label>
               </div>
             </div>
