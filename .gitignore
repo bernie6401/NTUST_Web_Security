@@ -1,10 +1,6 @@
-# /db/*
-./log/*
-# /php_ini/*
-# /upload_data/*
-# /web-image/*
-# *.yml
-./www/session_data/*
-./upload_attach/*
-./www/upload_data/*
+!log/README.md
+!upload_attach/README.md
 docker-compose.yml
+
+!www/session_data/README.md
+!www/upload_data/README.md
