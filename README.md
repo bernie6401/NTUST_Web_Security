@@ -25,25 +25,26 @@
 > 
 > 3. I can analyze the header more correctly that can get the real client IP instead of the virtual IP.
 
+***
 
 ## Important things for author
 > 1. Sometimes, the browser will not show the css effect correctly or just show a part of them. Then you can:
-> * stop the docker and up again
-> * use another browser
-> * restart the computer to clean the cache in the register
+>   * stop the docker and up again
+>   * use another browser
+>   * restart the computer to clean the cache in the register
 > 
 > 2. How to use .gitignore
-> * If you want to ignore all files
+>   * If you want to ignore all files
 > ```
 >    sample_folder/
 > ```
-> * If you want to ignore all files but some of them want to backup. (P.S you must set sample_folder/* at first)
+>   * If you want to ignore all files but some of them want to backup. (P.S you must set sample_folder/* at first)
 > ```
 >     sample_folder/*
 >     !sample_folder/s1.jpg
 >     !sample_folder/s2.pdf
 > ```
-> * .gitignore will ignore the files that haven't trace in the cache, so if you want to ignore the file that is traced you can execute the command
+>   * .gitignore will ignore the files that haven't trace in the cache, so if you want to ignore the file that is traced you can execute the command
 > ``` 
 >     git rm -r --cached .
 >     git add .
