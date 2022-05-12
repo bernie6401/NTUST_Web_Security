@@ -36,6 +36,7 @@
 >   * stop the docker and up again
 >   * use another browser
 >   * restart the computer to clean the cache in the register
+>   * or just WAIT...
 > 
 > 2. How to use .gitignore
 >   * If you want to ignore all files
