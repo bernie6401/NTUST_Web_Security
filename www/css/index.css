@@ -49,7 +49,8 @@ body
 /* sign in part */
 :root{--border-radius:0.8rem}
 html,body{height: 100%}
-.none{display: none!important}
+.none{display: none}
+#verify-false-1 #verify-true-1{margin-top: 10px;}
 .padding-left-mid
 {
     max-width: 226.7px;

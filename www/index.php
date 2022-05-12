@@ -45,7 +45,9 @@
               data-callback="verifyCallback">
               You're robot or not?
             </button>
+            </br>
             <button class="none w-100 btn btn-lg btn-primary btn-adjust" id="verify-false-1" type="button">You're robot.</button>
+            </br>
             <button class="none w-100 btn btn-lg btn-primary btn-adjust" id="verify-true-1" type="submit" name="login_submit">Login</button>
           </form>
         </div>
@@ -100,13 +102,13 @@
           // document.getElementById('verify-true').classList.remove('btn-lg');
           // document.getElementById('verify-true').classList.remove('btn-primary');
           // document.getElementById('verify-true').classList.remove('btn-adjust');
-          document.getElementById('verify-true').classList.remove('none');
+          document.getElementById('verify-true-1').classList.remove('none');
         }
         // 分數低於 0.5，當作機器人
         else
         {
           // 判斷是機器人時要做的事
-          document.getElementById('verify-false').classList.remove('none');
+          document.getElementById('verify-false-1').classList.remove('none');
         }
       }
       else
