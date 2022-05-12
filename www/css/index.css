@@ -47,9 +47,9 @@ body
 
 
 /* sign in part */
-:root{--border-radius:0.8rem;}
-html,body{height: 100%;}
-.none{display: none !important;}
+:root{--border-radius:0.8rem}
+html,body{height: 100%}
+.none{display: none!important}
 .padding-left-mid
 {
     max-width: 226.7px;
