@@ -24,6 +24,8 @@
 > 2. In /www/upload_data.php and /www/upload_data_web.php, we can add a statement about cookies and sessions then we can redirect the page more suitable as human beings. I designed the page to redirect the index.php consistently and this will let the users log in repeatedly.
 > 
 > 3. I can analyze the header more correctly that can get the real client IP instead of the virtual IP.
+>
+> 4. Repair the sign up page bug. If I cancel css class name none, I can bypass recaptcha function.
 
 ***
 
