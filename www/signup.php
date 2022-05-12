@@ -144,7 +144,7 @@
                         data-error-callback="error">
                     </div>
                     <button class="none float-right-adjust btn btn-primary" id="verify-false" type="button">You're robot.</button>
-                    <button class="float-right-adjust btn btn-primary" id="verify-true" type="submit" name="submit_bt">Submit form</button>
+                    <button class="none float-right-adjust btn btn-primary" id="verify-true" type="submit" name="submit_bt">Submit form</button>
                 </div>
             </form>
         </div>
