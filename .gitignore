@@ -1,6 +1,6 @@
 log/*.log
 !log/README.md
-upload_attach/
+upload_attach/*
 !upload_attach/README.md
 
 docker-compose.yml
