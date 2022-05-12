@@ -31,3 +31,22 @@
 > * stop the docker and up again
 > * use another browser
 > * restart the computer to clean the cache in the register
+> 
+> 2. How to use .gitignore
+>> * If you want to ignore all files
+```
+    sample_folder/
+```
+>> * If you want to ignore all files but some of them want to backup. (P.S you must set sample_folder/* at first)
+```
+    sample_folder/*
+    !sample_folder/s1.jpg
+    !sample_folder/s2.pdf
+```
+>> * .gitignore will ignore the files that haven't trace in the cache, so if you want to ignore the file that is traced you can execute the command
+``` 
+    git rm -r --cached .
+    git add .
+    git commit -m "update .gitignore"
+    git push
+```
