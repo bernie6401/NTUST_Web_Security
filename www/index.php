@@ -28,12 +28,13 @@
           <form method="POST" action="login.php" name="login">
             <div class="text-black" style="text-shadow:0 0 0">
               <div class="form-floating form-floating-adjust">
-                <input class="form-control input-adjust" id="floatingInput" placeholder="Username" type="text" name="username" required><br><br>
+                <input class="form-control input-adjust" id="floatingInput" placeholder="Username" type="text" name="username" required></input></br></br>
                 <label for="floatingInput">Username</label>
               </div>
 
               <div class="form-floating">
-                <input class="form-control input-adjust" id="floatingPassword" placeholder="Password" type="password" name="password" required></br></br>
+
+                <input class="form-control input-adjust" id="floatingPassword" placeholder="Password" type="password" name="password" required></input></br></br>
                 <label for="floatingPassword">Password</label>
               </div>
             </div>
@@ -42,11 +43,10 @@
               data-sitekey="6LeS0t0fAAAAAL2MDlvjEdl-VoNh-1mH_frVp0Ks"
               data-action="verify1"
               data-callback="verifyCallback">
-              You're not robot!
+              You're robot or not?
             </button>
-            
-            <button class="none w-100 btn btn-lg btn-primary btn-adjust" id="verify-false" type="button">You're robot.</button>
-            <button class="none w-100 btn btn-lg btn-primary btn-adjust" id="verify-true" type="submit" name="login_submit">Login</button>
+            <button class="none w-100 btn btn-lg btn-primary btn-adjust" id="verify-false-1" type="button">You're robot.</button>
+            <button class="none w-100 btn btn-lg btn-primary btn-adjust" id="verify-true-1" type="submit" name="login_submit">Login</button>
           </form>
         </div>
       </main>
@@ -95,17 +95,18 @@
         if(result.score > 0.5)
         {
           // 判斷是真人時要做的事
-          document.getElementById('verify-true').classList.remove('btn');
-          document.getElementById('verify-true').classList.remove('w-100');
-          document.getElementById('verify-true').classList.remove('btn-lg');
-          document.getElementById('verify-true').classList.remove('btn-primary');
-          document.getElementById('verify-true').classList.remove('btn-adjust');
+          // document.getElementById('verify-true').classList.remove('btn');
+          // document.getElementById('verify-true').classList.remove('w-100');
+          // document.getElementById('verify-true').classList.remove('btn-lg');
+          // document.getElementById('verify-true').classList.remove('btn-primary');
+          // document.getElementById('verify-true').classList.remove('btn-adjust');
+          document.getElementById('verify-true').classList.remove('none');
         }
         // 分數低於 0.5，當作機器人
         else
         {
           // 判斷是機器人時要做的事
-          document.getElementById('verify-false').classList.remove('btn');
+          document.getElementById('verify-false').classList.remove('none');
         }
       }
       else
