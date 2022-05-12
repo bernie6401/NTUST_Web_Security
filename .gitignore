@@ -1,6 +1,10 @@
 !log/README.md
+log/
 !upload_attach/README.md
+upload_attach/
 docker-compose.yml
 
 !www/session_data/README.md
+www/session_data/
 !www/upload_data/README.md
+www/upload_attach/
