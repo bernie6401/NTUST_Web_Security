@@ -12,10 +12,10 @@
 
 .padding-left-mid
 {
-    max-width: 226.7px;
+    max-width: 290px;
     position: relative;
     left: 50%;
-    margin-left: -110px;
+    margin-left: -120px;
 }
 
 .required-star-adjust
@@ -33,3 +33,5 @@
 }
 
 .float-right-adjust{float: right!important}
+
+.none{display: none !important;}
