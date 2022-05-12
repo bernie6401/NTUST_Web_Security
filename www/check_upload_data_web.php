@@ -1,8 +1,6 @@
 <?php 
-    ob_start();
     session_save_path('/var/www/html/session_data/');
     session_start();
-    include 'style.html';
 
     $img_file_addr = $_POST[image_file_web];
     $file_addr_len = strlen($_POST[image_file_web]);
@@ -39,15 +37,15 @@
             if (!mysqli_query($db_link, $sql))
                 die(mysqli_error());
             else
-                echo "File downloaded successfully<br>";
+            echo '<script>alert("File downloaded successfully")</script>';
         }
     }
     else if($file_addr_len > 2000)
-        echo 'Upload Failed! Your url is too large!<br>';
+        echo '<script>alert("Upload Failed! Your url is too large!")</script>';
     else
-        echo 'Upload Failed! Unknown reason!<br>';
+        echo '<script>alert("Upload Failed! Unknown reason!")</script>';
 
-    header("refresh:3; url=index.php");
+    header("refresh:0.1; url=index.php");
 
 
     function check($filename)
@@ -67,8 +65,6 @@
         else 
             return false;
         
-            
-
         if (!in_array($extension, ['png', 'jpeg', 'jpg']) !== false)   //verify file extension
         {
             echo "Invalid file extension: $extension.<br>";
@@ -86,6 +82,5 @@
         }
         else
             return true;
-
     }
 ?>
