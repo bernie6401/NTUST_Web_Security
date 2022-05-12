@@ -24,3 +24,10 @@
 > 2. In /www/upload_data.php and /www/upload_data_web.php, we can add a statement about cookies and sessions then we can redirect the page more suitable as human beings. I designed the page to redirect the index.php consistently and this will let the users log in repeatedly.
 > 
 > 3. I can analyze the header more correctly that can get the real client IP instead of the virtual IP.
+
+
+## Important things for author
+> 1. Sometimes, the browser will not show the css effect correctly or just show a part of them. Then you can:
+    * stop the docker and up again
+    * use another browser
+    * restart the computer to clean the cache in the register
