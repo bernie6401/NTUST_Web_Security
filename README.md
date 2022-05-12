@@ -26,6 +26,8 @@
 > 3. I can analyze the header more correctly that can get the real client IP instead of the virtual IP.
 >
 > 4. Repair the sign up page bug. If I cancel css class name none, I can bypass recaptcha function.
+>
+> 5. Replace the js alert massage box to much more beautiful. You can browse [this page](https://getbootstrap.com/docs/4.0/components/alerts/#triggers).
 
 ***
 
