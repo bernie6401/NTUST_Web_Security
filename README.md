@@ -1,7 +1,7 @@
 # NTUST_Web_Security
 
 ## Website specification
-> http://shorturl.at/cnL68
+> https://hackmd.io/@splitline/B1Js1ime9
 
 ***
 
