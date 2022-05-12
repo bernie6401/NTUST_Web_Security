@@ -28,6 +28,6 @@
 
 ## Important things for author
 > 1. Sometimes, the browser will not show the css effect correctly or just show a part of them. Then you can:
-    * stop the docker and up again
-    * use another browser
-    * restart the computer to clean the cache in the register
+> * stop the docker and up again
+> * use another browser
+> * restart the computer to clean the cache in the register
