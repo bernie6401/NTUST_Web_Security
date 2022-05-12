@@ -6,6 +6,7 @@
     <?php include("website_head.php"); ?>
     <!-- Custom styles for this template -->
     <link href="./css/index.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
 
   <body class="d-flex h-100 text-center text-white bg-dark">
@@ -36,7 +37,16 @@
                 <label for="floatingPassword">Password</label>
               </div>
             </div>
-            <button  class="w-100 btn btn-lg btn-primary btn-adjust" type="submit" name="login_submit">Login</button>
+            <button
+              class="g-recaptcha w-100 btn btn-lg btn-primary btn-adjust"
+              data-sitekey="6LeS0t0fAAAAAL2MDlvjEdl-VoNh-1mH_frVp0Ks"
+              data-action="verify1"
+              data-callback="verifyCallback">
+              You're not robot!
+            </button>
+            
+            <button class="none w-100 btn btn-lg btn-primary btn-adjust" id="verify-false" type="button">You're robot.</button>
+            <button class="none w-100 btn btn-lg btn-primary btn-adjust" id="verify-true" type="submit" name="login_submit">Login</button>
           </form>
         </div>
       </main>
@@ -47,3 +57,62 @@
     </div>
   </body>
 </html>
+
+<script>
+  // 取 ip
+  var uriIP = 'https://www.cloudflare.com/cdn-cgi/trace';
+  var ip;
+  fetch(uriIP)
+  .then(response => response.text())
+  .then(result =>
+  {
+      var resultArr = result.split('\n');
+      for(var i = 0, len = resultArr.length; i < len; i++)
+      {
+          var tempArr = resultArr[i].split('=');
+          if(tempArr[0] == 'ip')
+          {
+              ip = tempArr[1];
+              break;
+          }
+      }
+  })
+  .catch(err => {window.alert(err)});
+  var uriGAS = 'https://script.google.com/macros/s/AKfycbxlVyxovUb-6IIS42K10Ue7zaavCeaf3AabZ-B5Cxy4Y5pGXSsp0POvFNGFZm-rRKI/exec';
+  // 把 token 送到後端做驗證
+  function verifyCallback(token)
+  {
+    var formData = new FormData();
+    formData.append('token', token);
+    formData.append('ip', ip);
+
+    fetch(uriGAS,{method: "POST", body: formData}).then(response => response.json())
+    .then(result =>
+    {
+      if(result.success)
+      {
+        // 分數大過 0.5，才當作是真實人類操作
+        if(result.score > 0.5)
+        {
+          // 判斷是真人時要做的事
+          document.getElementById('verify-true').classList.remove('btn');
+          document.getElementById('verify-true').classList.remove('w-100');
+          document.getElementById('verify-true').classList.remove('btn-lg');
+          document.getElementById('verify-true').classList.remove('btn-primary');
+          document.getElementById('verify-true').classList.remove('btn-adjust');
+        }
+        // 分數低於 0.5，當作機器人
+        else
+        {
+          // 判斷是機器人時要做的事
+          document.getElementById('verify-false').classList.remove('btn');
+        }
+      }
+      else
+      {
+        window.alert(result['error-codes'][0])
+      }
+    })
+    .catch(err => {window.alert(err)})
+  }
+</script>
