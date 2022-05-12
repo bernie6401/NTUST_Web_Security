@@ -13,7 +13,7 @@
         <title>Post</title>
         <link href="./css/post.css" rel="stylesheet">
     </head>
-    <body class="container container-adjust text-white bg-dark">
+    <body class="container container-adjust"><!--  text-white bg-dark -->
         <!-- side bar -->
         <main>
             <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -114,7 +114,7 @@
                     <p class="h2"><strong>New Post</strong></p>
                     
                     <div class="mb-3">
-                        <input class="form-control form-control-lg" type="text" placeholder="Title" name="subject aria-label="Title">
+                        <input class="form-control form-control-lg" type="text" placeholder="Title" name="subject" aria-label="Title">
                     </div>
                     <div class="input-group mb-3">
                         <textarea class="form-control form-control-lg" aria-label="Content" name="content" placeholder="Please leave a comment here"></textarea>
@@ -131,7 +131,7 @@
 </html>
 
 <?php
-    if (isset($_POST['send_submit']) && $_POST['subject']!="" && $_POST['content']!="")
+    if (isset($_POST['send_submit']) && $_POST['subject']!="" && $_POST['content']!="")//
     {
         //upload attach file
         if(isset($_FILES['attach_file_submit']) && is_readable($_FILES['attach_file_submit']['tmp_name']))
@@ -141,12 +141,12 @@
             $attach_file_addr = str_replace("_", " ", $attach_file_addr);
             $attach_file_addr = "../upload_attach/".$prefix."_".$attach_file_addr;
             if(move_uploaded_file($_FILES['attach_file_submit']['tmp_name'], $attach_file_addr))
-                echo '<div class="success">Upload Attachment Success!</br></div>';
+                echo '<script>alert("Upload Attachment Success!")</script>';
         }
         else
             $attach_file_addr = '';
         
-
+        
         $subject = $_POST['subject'];
         $content = $_POST['content'];
         $username = $_GET['username'];
@@ -157,11 +157,10 @@
         $content = sqli_detect_blog($content);
         
         //create post id
-        include "config.php";
         $db_link = ConnectDB();
-        require_once('check_post_id.php');
+        include 'check_post_id.php';
         $post_id = check_post_id($db_link);
-
+        
         $sql = "INSERT into `users_blog`(`post_id`, `user_name`, `blog_title`, `blog_content`, `post_time`, `attach_file_addr`) VALUES ('$post_id', '$username', '$subject', '$content', now(), '$attach_file_addr');";
         
         if (!mysqli_query($db_link, $sql))
@@ -170,14 +169,13 @@
         }
         else
         {
-            echo '<div class="success">Added successfully !</br>Wait for redirection !</div>';
             header("Location: board.php");
         }
     }
-    else if(password_verify($password, $row_result['password']))
-    {
-        echo '<div class="success">Click <strong>Send</strong> when you\'re done.</div>';
-    }
+    // else if(password_verify($password, $row_result['password']))
+    // {
+    //     echo '<div class="success">Click <strong>Send</strong> when you\'re done.</div>';
+    // }
     else if(isset($_POST['send_submit']) && ($_POST['subject']=="" || $_POST['content']==""))
     {
         echo '<script>alert("You can not let the field blank!")</script>';
