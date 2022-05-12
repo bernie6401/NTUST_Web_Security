@@ -7,9 +7,18 @@
         <?php include("website_head.php")?>
         <title>New Member</title>
         <link href="./css/signup.css" rel="stylesheet">
+
+        <!-- import recaptcha JS -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LeS0t0fAAAAAL2MDlvjEdl-VoNh-1mH_frVp0Ks" async="async" defer="defer"></script> -->
     </head>
 
     <body class="container container-adjust text-white bg-dark">
+        <!-- Normal js file import -->
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <script src="./js/signup.js"></script>
+
+        <!-- main signup part -->
         <div class="form-floating form-floating-adjust padding-left-mid">
             <form class="row g-3 needs-validation" novalidate id="formAdd" name="formAdd" method="post">
                 <div class="margin-top-div-adjust">
@@ -110,16 +119,6 @@
                     </div>
                 </div>
 
-                <div class="margin-top-div-adjust">
-                    <label for="validationCustom05">
-                        Zip
-                        <span class="required-star-adjust">*</span>
-                    </label>
-                    <input type="text" class="form-control" id="validationCustom05" required>
-                    <div class="invalid-feedback">
-                        Please provide a valid zip.
-                    </div>
-                </div>
 
                 <div class="margin-top-div-adjust">
                     <div class="form-check">
@@ -133,29 +132,33 @@
                     </div>
                 </div>
 
+
+                <!-- submit button -->
                 <div class="margin-top-div-adjust">
-                    <button class="float-right-adjust btn btn-primary" type="submit" name="submit_bt">Submit form</button>
+                    <div
+                        class="g-recaptcha"
+                        data-sitekey="6LeHJ9ofAAAAADeUSMkMaReVjurI3nxSzGL6iWZy"
+                        data-theme="light" data-size="normal"
+                        data-callback="verifyCallback"
+                        data-expired-callback="expired"
+                        data-error-callback="error">
+                    </div>
+                    <button class="none float-right-adjust btn btn-primary" id="verify-false" type="button">You're robot.</button>
+                    <button class="float-right-adjust btn btn-primary" id="verify-true" type="submit" name="submit_bt">Submit form</button>
                 </div>
             </form>
-
         </div>
-
-        <script src="./js/bootstrap.bundle.min.js"></script>
-        <script src="./js/signup.js"></script>
     </body>
 </html>
 
 <?php
-    if(isset($_POST['username']) && isset($_POST['password']) && $_POST['username']!="" && $_POST['password']!="")
+    if(isset($_POST['username']) && $_POST['username']!="" && isset($_POST['password']) && $_POST['password']!="")
     {
-        echo '<script>alert("GGG")</script>';
         //must check the username include sqli words or not
         require_once('sqli_filter.php');
         $sqli_username_detect = sqli_detect_signup($_POST['username']);
         if($sqli_username_detect === true)
-        {
             echo '<script>alert("You can not use the special character.")</script>';
-        }
         else
         {
             include("check_signup.php");
@@ -170,7 +173,6 @@
                 else
                 {
                     //get the post parameter and prepare
-                    // $password = $_POST["password"];
                     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                     $sql_query_insert = "INSERT INTO `users_info` (`id`, `username`, `password`, `avatar_id`) VALUES ('$id', '$username', '$password', './upload_data/default_avatar.jpg')";
             
@@ -209,5 +211,76 @@
             
         else
             x.type = "password";
+    }
+
+    function onClick(e)
+    {
+        e.preventDefault();
+        grecaptcha.ready(function()
+        {
+            grecaptcha.execute('6LeS0t0fAAAAAL2MDlvjEdl-VoNh-1mH_frVp0Ks', {action: 'submit'}).then(function(token)
+            {
+                // Add your logic to submit to your backend server here.
+            });
+        });
+    }
+
+    // function onSubmit(token)
+    // {
+    //     document.getElementById("formAdd").submit();
+    // }
+
+
+    // 取 ip
+    var uriIP = 'https://www.cloudflare.com/cdn-cgi/trace';
+    var ip;
+    fetch(uriIP)
+    .then(response => response.text())
+    .then(result =>
+    {
+        var resultArr = result.split('\n');
+        for(var i = 0, len = resultArr.length; i < len; i++)
+        {
+            var tempArr = resultArr[i].split('=');
+            if(tempArr[0] == 'ip')
+            {
+                ip = tempArr[1];
+                break;
+            }
+        }
+    })
+    .catch(err => {window.alert(err)});
+
+    function verifyCallback(token)
+    {
+        var formData = new FormData();
+        formData.append('token', token);
+        formData.append('ip', ip);
+            
+        // Google Apps Script 部署為網路應用程式後取得的 URL
+        var uriGAS = 'https://script.google.com/macros/s/AKfycbzeosH-DyfyS1CzVlrgoiV11CAM6a9Zy_TpCqDlrjQ5y4yL6qW1RfYoaowVMXH3rxk/exec';
+            
+        fetch(uriGAS,
+        {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(result =>
+        {
+            if(result.success)
+            {
+                // 後端驗證成功，success 會是 true
+                // 這邊寫驗證成功後要做的事
+                document.getElementById('verify-true').classList.remove('none');
+            }
+            else
+            {
+                // success 為 false 時，代表驗證失敗，error-codes 會告知原因
+                window.alert(result['error-codes'][0])
+                document.getElementById('verify-false').classList.remove('none');
+            }
+        })
+        .catch(err => {window.alert(err)})
     }
 </script>
