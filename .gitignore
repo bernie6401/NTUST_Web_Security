@@ -1,11 +1,11 @@
-log/
-!README.md
+log/*.log
+!log/README.md
 upload_attach/
 !upload_attach/README.md
 
 docker-compose.yml
 
-# !www/session_data/README.md
+!www/session_data/README.md
 www/session_data/sess_*
 !www/upload_data/README.md
 www/upload_data/*.jpg
