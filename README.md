@@ -28,6 +28,10 @@
 > 4. Repair the sign up page bug. If I cancel css class name none, I can bypass recaptcha function.
 >
 > 5. Replace the js alert massage box to much more beautiful. You can browse [this page](https://getbootstrap.com/docs/4.0/components/alerts/#triggers).
+>
+> 6. Verify weak passwaord and email format corret or not.
+>
+> 7. Show the post according to the time order
 
 ***
 
