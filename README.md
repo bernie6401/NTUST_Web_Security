@@ -32,6 +32,14 @@
 > 6. Verify weak passwaord and email format corret or not.
 >
 > 7. Show the post according to the time order
+>
+> 8. Check the user identify who wants to delete post.(In delete_post.php)
+>
+> 9. Third-party login
+>
+> 10. Create the "revise profile page" including password, username, or email
+>
+> 11. Verify the email that user enter(you can send a verification code to the email)
 
 ***
 
