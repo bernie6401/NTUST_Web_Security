@@ -115,7 +115,6 @@
         ?>
     </div>
 </body>
-</html>
 
 <?php
     function month_list($mon)
