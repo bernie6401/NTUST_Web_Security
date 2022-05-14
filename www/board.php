@@ -34,7 +34,7 @@
             //從資料庫中撈留言紀錄並顯示出來 --> design post typography and the content
             include "config.php";
             $db_link = ConnectDB();
-            $sql = "SELECT * from `users_blog`";
+            $sql = "SELECT * from `users_blog` order by `post_time`";
             $result = mysqli_query($db_link, $sql);
             // $_SESSION['name'] = $name = $_GET['name'];
             
