@@ -2,7 +2,6 @@
     session_save_path('/var/www/html/session_data');
 
     require("config.php");
-    // include 'style.html';
 ?>
 <!DOCTYPE html>
 
@@ -20,8 +19,8 @@
 
     if ($sqli_user === true)
     {
-        echo "You such a hacker !!!";
-        header("refresh:3; url=index.php");
+        echo "<script>alert('You such a hacker !!!')</script>";
+        header("refresh:0.5; url=index.php");
     }
     else
     { 
@@ -34,7 +33,7 @@
         {
             if(!password_verify($password, $row_result['password']) && !isset($_POST['send_submit']) && !isset($_POST['change_title']))// && $_COOKIE['user_name'] != $username
             {
-                echo '<div class="flex-center">Wrong username or password.</br>Please check it out again</div>';
+                echo "<script>alert('Wrong username or password.Please check it out again')</script>";
                 logout("user_name");
             }
             //set up cookies
@@ -47,7 +46,7 @@
             }
             else if(isset($_POST['change_title']))
             {
-                echo '<div class="flex-center">Wait for redirection to index page!</div>';
+                echo "<script>alert('Wait for redirection to index page!')</script>";
             }
         }
         catch (Exception $e)
@@ -56,7 +55,6 @@
             echo 'Check credentials in config file at: ', $Mysql_config_location, '\n';
         }
     }
-    
 ?>
 
 <!-- design the web including user profile and blog -->
@@ -72,6 +70,7 @@
             echo "<title>".$title."</title>";
         ?>
         <link href="./css/login.css" rel="stylesheet">
+        <script src="./js/bootstrap.bundle.min.js"></script>
     </head>
     <body class="container container-adjust text-white bg-dark">
         <?php
@@ -141,8 +140,6 @@
                 </footer>';
             }
         ?>
-
-        <script src="./js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
 
@@ -155,6 +152,6 @@
         $sql = "UPDATE `page_title` SET `title_name` = '$title_name';";
         mysqli_query($db_link, $sql);
         
-        header("refresh:2; url=index.php");
+        header("Location: index.php");
     }
 ?>
