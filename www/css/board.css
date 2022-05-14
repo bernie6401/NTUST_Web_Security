@@ -1,10 +1,22 @@
+/* for all */
 .img-circle{border-radius:50%}
-.container-adjust{max-width: 1000px!important}
+.container-adjust{max-width: 1000px!important;}
 
-/* .post_content
+/* for header */
+.border-adjust
 {
+    border-radius:0.25rem!important;
+    margin-bottom: 5px!important;
+    margin-top: 0!important;
+    position: fixed;
+    top: 0;
+    right: 2.5%;
+    left: 2.5%;
+    background-color: black!important;
+}
 
-} */
+/* for post typography */
+.padding-adjust{padding-top: 80px;}
 
 .margin-adjust
 {
@@ -20,13 +32,13 @@
     box-shadow: 5px 5px #888888c4;
 }
 
+.position-adjust{position: inherit!important;}
+
 .avatar-adjust
 {
     float: left;
     margin-right: 0.5rem;
 }
-
-.time-right-adjust{text-align: right;}
 
 .username-adjust
 {
@@ -34,9 +46,30 @@
     margin-bottom: 5px;
 }
 
-.username-float-adjust{float: left;}
-
 .font-size{font-size: 20px;}
+
+.content-float-adjust
+{
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.delete-adjust{margin-bottom: 0px;}
+
+.margin-left-adjust
+{
+    margin-left: 30px;
+    margin-right: 100px;
+}
+
+.content-border-adjust
+{
+    padding: 0.01em 16px;
+    border-left: 6px solid #0000009d !important;
+}
+
+.word-wrap-adjust{word-wrap: break-word;}
 
 .title-adjust
 {
@@ -52,24 +85,4 @@
     color: rgb(0, 0, 0);
 }
 
-.margin-left-adjust
-{
-    margin-left: 30px;
-    margin-right: 100px;
-}
-
-.content-border-adjust
-{
-    padding: 0.01em 16px;
-    border-left: 6px solid #0000009d !important;
-    /* float: left; */
-}
-
-.delete-adjust{margin-bottom: 0px;}
-
-.content-float-adjust
-{
-    float: right;
-    margin-top: 10px;
-    margin-right: 10px;
-}
+.time-right-adjust{text-align: right;}
