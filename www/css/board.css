@@ -73,15 +73,16 @@
 
 .title-adjust
 {
-    font-size: 40px;
+    font-size: 30px;
     color: rgb(0, 0, 0);
     border: none;
     background-color: #d1e7dd!important;
+    padding: 0;
 }
 
 .content-adjust
 {
-    font-size: 15px;
+    font-size: 18px;
     color: rgb(0, 0, 0);
 }
 
