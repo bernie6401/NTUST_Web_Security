@@ -6,13 +6,12 @@
 </head>
 <body class="container container-adjust text-white bg-dark">
     <?php
-        // include 'style.html';
-        require_once("config.php");
-
-        $db_link = ConnectDB();
-
         if(isset($_POST['view_one_post']))
         {
+            //connect to db
+            require_once("config.php");
+            $db_link = ConnectDB();
+
             //get the avatar from db
             $username = $_POST["view_one_post_user_name"];
             $sql = "SELECT `avatar_id` FROM `users_info` WHERE `username`='$username';";
@@ -82,6 +81,9 @@
             echo "
             </div>";
         }
+
+        else
+            header('Location: index.php')
     ?>
 </body>
 
