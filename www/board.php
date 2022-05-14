@@ -6,17 +6,38 @@
     <?php include("website_head.php")?>
     <link href="./css/board.css" rel="stylesheet">
     <title>Board</title>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </head>
 <body class="container container-adjust text-white bg-dark">
-    <div>
+    <!-- design header -->
+    <nav class="navbar navbar-dark bg-primary mt-2 border-adjust" style="background-color: rgba(37, 163, 33, 1)!important">
+        <div class="container-fluid">
+            <a class="navbar-brand text-color-adjust" href="index.php"><b>Board</b></a>
+            <button class="navbar-toggler button-color-adjust" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExample01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-color-adjust" href="signup.php"><b>Register</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-color-adjust" href="logout.php"><b>Logout</b></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="padding-adjust">
         <?php
-            echo '<div class="top-right home "><a href="index.php">Login</a></div>';
+            //從資料庫中撈留言紀錄並顯示出來 --> design post typography and the content
             include "config.php";
             $db_link = ConnectDB();
             $sql = "SELECT * from `users_blog`";
             $result = mysqli_query($db_link, $sql);
             // $_SESSION['name'] = $name = $_GET['name'];
-            //從資料庫中撈留言紀錄並顯示出來
+            
             while ($row = mysqli_fetch_assoc($result))
             {
                 //exchange the post_time string to let "post" method can bring the whole string to delete_post.php
@@ -39,11 +60,11 @@
                 $post_time_day = explode(" ", $post_time_day)[0];
 
                 echo "
-                <div class='alert alert-success margin-adjust board-color' role='alert'>
+                <div class='alert alert-success margin-adjust board-color position-adjust' role='alert'>
                     <span  class='avatar-adjust'>
                         <img src=".$avatar_id_row ["avatar_id"]." width='30' height='30' class='img-circle' title='Your avatar icon'>
                     </span>
-                    <div class='username-adjust float-adjust font-size margin-bottom-adjust'>
+                    <div class='username-adjust font-size'>
                         ".$row['user_name']."
                     </div>";
                     
@@ -73,7 +94,7 @@
                 }
                 
                 echo "
-                    <div class='margin-left-adjust content-border-adjust'>
+                    <div class='margin-left-adjust content-border-adjust word-wrap-adjust'>
                         <form action='view_one_post.php' method='POST' enctype='multipart/form-data'>
                             <input type='hidden' name='view_one_post_time' value=".$post_time.">
                             <input type='hidden' name='view_one_post_user_name' value=".$row['user_name'].">
