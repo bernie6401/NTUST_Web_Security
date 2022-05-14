@@ -86,3 +86,6 @@
 }
 
 .time-right-adjust{text-align: right;}
+
+/* for view_one_post.php */
+.view-one-post-margin-adjust{margin-top: 2rem;}
